@@ -33,7 +33,7 @@ public class Main {
 //секунды в дни, часы, минут и секунды//
         System.out.println(secondsToDaysHoursMinSeconds(45089));
 //вычисление площади и длины круга//
-        System.out.println(circlePar(45.1));
+        System.out.println(lenghtAndSquareOfCircle(45.1));
 // закрывает ли круг отверстие//
         System.out.println(hole(-5, 5, 6));
 //вычисление возраста (работает плохо, на все месяцы имеющие номер больше текущего выдает отрицательные значения, не правильно показывает день)//
@@ -42,8 +42,9 @@ public class Main {
     }
 
 
-    public static int intToString(int a) {
-        return a;
+    public static String intToString(int a) {
+        String s = "" + a;
+        return s;
 
     }
 
@@ -89,20 +90,20 @@ public class Main {
         return res;
     }
 
-    public static void charDance(String s) {
+    public static void charCaseChange(String s) {
         char[] ch = s.toCharArray();
         for (int i = 0; i < ch.length; i = i + 2) {
-            char a = Character.toLowerCase(ch[i]);
+            char lowChar = Character.toLowerCase(ch[i]);
 
             for (int j = 1; j < ch.length; j = j + 2) {
-                char b = Character.toUpperCase(ch[j]);
-                System.out.println("" + a + b);
+                char highChar = Character.toUpperCase(ch[j]);
+                System.out.println("" + lowChar + highChar);
             }
         }
     }
 
 
-    public static String circlePar(double r) {
+    public static String lenghtAndSquareOfCircle(double r) {
         double square = Math.PI * r * r;
         double lenght = 2 * Math.PI * r;
         String result = square + " Площадь окружности " + lenght + " Длина окружности";
